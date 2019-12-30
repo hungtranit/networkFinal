@@ -17,7 +17,7 @@ public class FileServer {
 			while (true) {
 				try {
 					Socket socket = serverSocket.accept();
-					FileServerProcessing fsp = new FileServerProcessing();
+					FileServerProcessing fsp = new FileServerProcessing(socket);
 					fsp.start();
 				} catch (Exception e) {
 					// TODO: handle exception
