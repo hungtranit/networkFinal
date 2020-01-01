@@ -11,7 +11,7 @@ public class StudentDAO {
 		listStudent = new ArrayList<>();
 	}
 
-	private void createStudentList() {
+	public void createStudentList() {
 		listStudent.add(new Student("hung", 123, 20, 7.0));
 		listStudent.add(new Student("bong", 124, 19, 6.0));
 		listStudent.add(new Student("minh", 125, 18, 5.0));
@@ -20,15 +20,30 @@ public class StudentDAO {
 	}
 
 	public List<Student> findByName(String name) {
-		// todo
+		List<Student> resultList = new ArrayList<>();
+		for (Student student : listStudent) {
+			if (name.equalsIgnoreCase(student.getName()))
+				resultList.add(student);
+		}
+		return resultList;
 	}
 
 	public List<Student> findByAge(int age) {
-		// todo
+		List<Student> resultList = new ArrayList<>();
+		for (Student student : listStudent) {
+			if (age == student.getYearOld())
+				resultList.add(student);
+		}
+		return resultList;
 	}
 
 	public List<Student> findByScore(double score) {
-		// todo
+		List<Student> resultList = new ArrayList<>();
+		for (Student student : listStudent) {
+			if (score == student.getScore())
+				resultList.add(student);
+		}
+		return resultList;
 	}
 
 }

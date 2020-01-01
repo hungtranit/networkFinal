@@ -11,7 +11,7 @@ public class UserDAO {
 		listUser = new ArrayList<>();
 	}
 
-	private void createData() {
+	public void createData() {
 		listUser.add(new User("admin", "@123"));
 		listUser.add(new User("minh", "123123"));
 		listUser.add(new User("thien", "123123"));
